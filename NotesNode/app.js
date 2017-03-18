@@ -18,7 +18,7 @@ console.log("Yargs", argv);
 if(command  === "add"){
 	notes.addNote(argv.title, argv.body);
 }else if(command === "list"){
-	console.log("Listing all notes");
+	notes.getAll();
 }else if(command === "read"){
 	console.log("Reading note");
 }else if(command === "remove"){
