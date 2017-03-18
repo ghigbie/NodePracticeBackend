@@ -1,11 +1,15 @@
-console.log("Starting App");
+console.log("Starting app.js");
 
 const fs = require("fs");
 const os = require("os");
+const notes = require("./notes.js");
 
-let user = os.userInfo();
+var res = notes.addNote();
+console.log(res);
 
-fs.appendFile("greetings.txt", `Hello ${user.username}!`);
+// let user = os.userInfo();
+
+// fs.appendFile("greetings.txt", `Hello ${user.username}! You are ${notes.age}.`);
 
 
 //fs.appendFile("greetings.txt", "Hello Word");
