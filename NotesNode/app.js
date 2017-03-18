@@ -20,9 +20,9 @@ if(command  === "add"){
 }else if(command === "list"){
 	notes.getAll();
 }else if(command === "read"){
-	console.log("Reading note");
+	notes.readNote(argv.title);
 }else if(command === "remove"){
-	console.log("Removing note");
+	notes.removeNote(argv.title);
 }else{
 	console.log("Command not recognized");
 }
