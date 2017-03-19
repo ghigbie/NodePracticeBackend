@@ -29,7 +29,7 @@ fs.writeFileSync("notes.json", originalNoteString);
 
 console.log("===============================");
 
-var noteString = fs.readFileSync("notes.json");ote
+var noteString = fs.readFileSync("notes.json");
 var note = JSON.parse(noteString);
 console.log(typeof note);
 console.log(note.title);
