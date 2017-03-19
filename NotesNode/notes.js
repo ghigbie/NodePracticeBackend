@@ -12,8 +12,9 @@ var fetchNotes = () => {
 };
 
 var saveNotes = (notes) => {
-	fs.writeFileSync("notes-data.json", JSON.stringify(ndotes));
+	fs.writeFileSync("notes-data.json", JSON.stringify(notes));
 };
+
 
 var addNote = (title, body) => {
 	var notes = fetchNotes();
@@ -27,12 +28,8 @@ var addNote = (title, body) => {
 	if(duplicateNotes.length === 0){
 		notes.push(note);
 		saveNotes(notes);
-	}else{
-		console.log("===================================================");
-		console.log("A duplicate note was found. Message cannot be saved");
-		console.log("===================================================");
+		return note;
 	}
-	
 };
 
 var getAll = () =>{

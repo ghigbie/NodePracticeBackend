@@ -16,7 +16,16 @@ console.log("Process", process.argv);
 console.log("Yargs", argv);
 
 if(command  === "add"){
-	notes.addNote(argv.title, argv.body);
+	var note = notes.addNote(argv.title, argv.body);
+	if(note){
+		console.log("==========================");
+		console.log("Note successfully created!");
+		console.log("==========================");
+	}else{
+		console.log("===============================================================");
+		console.log("A duplicate note was already in use. This nodte cannot be saved");
+		console.log("===============================================================");
+	}
 }else if(command === "list"){
 	notes.getAll();
 }else if(command === "read"){
