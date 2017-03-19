@@ -21,6 +21,10 @@ var addNote = (title, body) => {
 	if(duplicateNotes.length === 0){
 		notes.push(note);
 		fs.writeFileSync("notes-data.json", JSON.stringify(notes));
+	}else{
+		console.log("===================================================");
+		console.log("A duplicate note was found. Message cannot be saved");
+		console.log("===================================================");
 	}
 	
 };
