@@ -20,6 +20,8 @@ if(command  === "add"){
 	if(note){
 		console.log("==========================");
 		console.log("Note successfully created!");
+		console.log(`Title: ${note.title}`);
+		console.log(`Body: ${note.body}`);
 		console.log("==========================");
 	}else{
 		console.log("===============================================================");
