@@ -2,7 +2,7 @@ console.log("Starting notes.js");
 const fs = require("fs");
 
 
-var fetchNotoes = () => {
+var fetchNotes = () => {
 	try{
 		var notesString = fs.readFileSync("notes-data.json");
 		return JSON.parse(notesString);
