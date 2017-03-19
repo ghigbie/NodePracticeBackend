@@ -12,12 +12,20 @@ var addNote = (title, body) => {
 		var notesString = fs.readFileSync("notes-data.json");
 		notes = JSON.parse(notesString);
 	}catch(err){
-		console.log("There was a problem.");
-		console.log(err);
+		// console.log("There was a problem.");
+		// console.log(err);
 	}
 
-	notes.push(note);
-	fs.writeFileSync("notes-data.json", JSON.stringify(notes));
+	let duplicateNotes = 0;
+	for(let i = 0; i < notes.length; i++){
+		if(notes[i].title === note.title){
+			duplicateNotes++
+		}
+	}
+	if(duplicateNotes > 0){
+		notes.push(note);
+		fs.writeFileSync("notes-data.json", JSON.stringify(notes));
+	}
 };
 
 var getAll = () =>{
