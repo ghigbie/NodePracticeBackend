@@ -12,7 +12,7 @@ const argv = yargs.argv;
 var command = process.argv[2];
 
 console.log("Command: ", command);
-console.log("Process", process.argv);
+//console.log("Process", process.argv);
 console.log("Yargs", argv);
 
 if(command  === "add"){
@@ -25,7 +25,7 @@ if(command  === "add"){
 		console.log("==========================");
 	}else{
 		console.log("===============================================================");
-		console.log("A duplicate note was already in use. This nodte cannot be saved");
+		console.log("A duplicate note was already in use. This node cannot be saved");
 		console.log("===============================================================");
 	}
 }else if(command === "list"){
