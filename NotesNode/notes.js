@@ -19,7 +19,7 @@ var saveNotes = (notes) => {
 var addNote = (title, body) => {
 	var notes = fetchNotes();
 	var note = {
-		title,
+		title,  //in Es6 we can remove the title: title syntax when both properties have the same name
 		body
 	};
 
@@ -42,7 +42,14 @@ var getNote = (title) => {
 
 var removeNote = (title) =>{
 	console.log("Removing note: ", title);
+	var notes = fetchNotes();// fetch notes
+	var filteredNotes = notes.filter((note) => note.title !== title);// filter notes, removing the one with the title agr
+	saveNotes(filteredNotes);// save new notes array
+
+	return notes.length !== filterNotes.length;
 };
+	
+
 
 
 //this uses ES6 syntax to list out identical key value pairs in an object

@@ -6,7 +6,7 @@ const _ = require("lodash");
 const yargs = require("yargs");
 
 //developer created files
-const notes = require("./notes.js");
+const notes = require("./notes.js");  //the ./ is needed to show that is located on the same level
 
 const argv = yargs.argv;
 var command = argv._[0];
@@ -33,6 +33,10 @@ if(command  === "add"){
 	notes.getNote(argv.title);
 }else if(command === "remove"){
 	notes.removeNote(argv.title);
+	var message = noteRemoved = notes.removeNote(argv.title);
+	console.log("=========================");
+	console.log(`${message} was removed`);
+	console.log("=========================");
 }else{
 	console.log("Command not recognized");
 }
