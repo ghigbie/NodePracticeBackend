@@ -19,9 +19,7 @@ if(command  === "add"){
 	if(note){
 		console.log("==========================");
 		console.log("Note successfully created!");
-		console.log(`Title: ${note.title}`);
-		console.log(`Body: ${note.body}`);
-		console.log("==========================");
+		notes.logNote(note);
 	}else{
 		console.log("===============================================================");
 		console.log("A duplicate note was already in use. This node cannot be saved");
@@ -34,9 +32,7 @@ if(command  === "add"){
 	if(note){
 		console.log("========================");
 		console.log("Note successfully found!");
-		console.log(`Title: ${note.title}`);
-		console.log(`Body: ${note.body}`);
-		console.log("========================");
+		notes.logNote(note);
 	}else{
 		console.log("============================");
 		console.log("This note does not exist : (");
