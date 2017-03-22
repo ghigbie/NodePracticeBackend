@@ -9,7 +9,11 @@ const notes = require("./notes.js");  //the ./ is needed to show that is located
 
 const argv = yargs
 	.command("add", "Add a new note", {
-
+		title: {
+			describe: "Title of a new note",
+			demand: true,
+			alias: "t"
+		}
 	})
 	.help()
 	.argv;
