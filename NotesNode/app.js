@@ -1,4 +1,3 @@
-console.log("Starting app.js");
 
 //third-party and node modules
 const fs = require("fs");
@@ -8,11 +7,16 @@ const yargs = require("yargs");
 //developer created files
 const notes = require("./notes.js");  //the ./ is needed to show that is located on the same level
 
-const argv = yargs.argv;
+const argv = yargs
+	.command("add", "Add a new note", {
+
+	})
+	.help()
+	.argv;
 var command = argv._[0];
 
-console.log("Command: ", command);
-console.log("Yargs", argv);
+// console.log("Command: ", command);
+// console.log("Yargs", argv);
 
 if(command  === "add"){
 	var note = notes.addNote(argv.title, argv.body);
