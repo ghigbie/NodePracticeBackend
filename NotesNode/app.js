@@ -20,9 +20,21 @@ const argv = yargs
 			alias: "b"
 		}
 	})
-	// .command("list", "List all notes")
-	// .command("read", "Read a specific note")
-	// .command("")
+	.command("list", "List all notes")
+	.command("read", "Read a specific note", {
+		title: {
+			describe: "Title of a new note",
+			demand: true,
+			alias: "t"
+		}
+	})
+	.command("remove", "Delete a specific note", {
+		title: {
+			describe: "Title of a new note",
+			demand: true,
+			alias: "t"
+		}
+	})
 	.help()
 	.argv;
 var command = argv._[0];
