@@ -6,34 +6,28 @@ const yargs = require("yargs");
 
 //developer created files
 const notes = require("./notes.js");  //the ./ is needed to show that is located on the same level
+const titleOptions = {
+	describe: "Title of a new note",
+	demand: true,
+	alias: "t"
+};
+const bodyOptions = {
+	describe: "Text of a new note",
+	demand: true,
+	alias: "b"
+};
 
 const argv = yargs
 	.command("add", "Add a new note", {
-		title: {
-			describe: "Title of a new note",
-			demand: true,
-			alias: "t"
-		},
-		body: {
-			describe: "Text of a new note",
-			demand: true,
-			alias: "b"
-		}
+		title: titleOptions,
+		body: bodyOptions
 	})
 	.command("list", "List all notes")
 	.command("read", "Read a specific note", {
-		title: {
-			describe: "Title of a new note",
-			demand: true,
-			alias: "t"
-		}
+		title: titleOptions
 	})
 	.command("remove", "Delete a specific note", {
-		title: {
-			describe: "Title of a new note",
-			demand: true,
-			alias: "t"
-		}
+		title: titleOptions
 	})
 	.help()
 	.argv;
